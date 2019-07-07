@@ -5,14 +5,16 @@
  */
 package Veterinary;
 
+import java.io.PrintStream;
+
 /**
  *
  * @author Estudiante
  */
 public class Hamster extends Pet{
-    private double weight;
+    private String weight;
 
-    public Hamster(double weight, String id, String name, String hairColor) {
+    public Hamster( String id, String name, String hairColor,String weight) {
         super(id, name, hairColor);
         this.weight = weight;
     }
@@ -21,6 +23,19 @@ public class Hamster extends Pet{
         System.out.println("");
     }
     
+    @Override
+    public void showInfo(){
+           super.showInfo();
+           System.out.println("Weight:"+this.weight);
+           System.out.println("-------------------------------------------------");
+    }
+    @Override
+    public void printInfo(PrintStream print){
+        print.print("Hamster"+" ");
+        super.printInfo(print);
+        print.println(this.weight);
+        
+    }
 
     
     

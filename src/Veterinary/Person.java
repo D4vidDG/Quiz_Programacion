@@ -21,12 +21,21 @@ public class Person {
         this.id = id;
         this.pets = new ArrayList <>();
     }
+
+    public String getName() {
+        return name;
+    }
+    public String getId() {
+        return id;
+    }
+    public ArrayList<Pet> getPets() {
+        return pets;
+    }
+    
     public void showPets(){
        for(int i=0;i<this.pets.size();i++){
            System.out.println("Pet"+" "+(i+1)+"------------------------------------------------");
-           System.out.println("Name:"+this.pets.get(i).getName());
-           System.out.println("ID:"+this.pets.get(i).getId());
-           System.out.println("Hair Color:"+this.pets.get(i).getHairColor());
+           pets.get(i).showInfo();
        }
     }
     }

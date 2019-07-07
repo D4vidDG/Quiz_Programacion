@@ -6,34 +6,54 @@
 package Veterinary;
 
 import java.util.*;
-
+import java.io.*;
 /**
  *
  * @author Estudiante
  */
 public class Vet {
-    private ArrayList <Pet> pets;
+    private HashMap <String,Pet> pets;
 
-    public Vet() {
-        this.pets = new ArrayList<>();
+
+    public Vet()  {
+        this.pets = new HashMap <>();
     }
-    public void removePet(Pet p){
-        
+
+
+    public HashMap<String, Pet> getPets() {
+        return pets;
     }
-    public void showPetsByType(String type) throws ClassNotFoundException{
-        Class.
-        for(int i=0;i<this.pets.size();i++){
-        if(this.pets.get(i) instanceof type){
-            
-        }
+    
+
+    public void removePet(String id){
+        this.pets.remove(id);
+    }
+    public void showPetsByType(String type) throws IllegalArgumentException {
+        for(Pet pet: this.pets.values()){
+           switch(type){
+               case "Dog":
+                   if(pet instanceof Dog){
+                       pet.showInfo();
+                   }
+                   break;
+                   case "Hamster":
+                   if(pet instanceof Hamster){
+                       pet.showInfo();
+                   }
+                   break;
+                   case "Cat":
+                   if(pet instanceof Cat){
+                       pet.showInfo();
+                   }
+                   break;
+                   default:
+                       throw new java.lang.IllegalArgumentException();
+    }
     }
     }
     public void showPets(){
-        for(int i=0;i<this.pets.size();i++){
-           System.out.println("Pet"+" "+(i+1)+"------------------------------------------------");
-           System.out.println("Name:"+this.pets.get(i).getName());
-           System.out.println("ID:"+this.pets.get(i).getId());
-           System.out.println("Hair Color:"+this.pets.get(i).getHairColor());
+       for(Pet pet:this.pets.values()){
+           pet.showInfo();
        }
     } 
 }

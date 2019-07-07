@@ -1,0 +1,8 @@
+Cat cat2 checha blanco false
+Maria 39735679 
+Dog dog2 zlatam negro Bernese
+Fabian 123456 
+Dog dog1 nana dorado shitzu
+Andres 1203323591 
+Hamster hamster1 carlos café 5.7
+Andres 1203323591 

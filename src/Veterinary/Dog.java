@@ -5,6 +5,8 @@
  */
 package Veterinary;
 
+import java.io.PrintStream;
+
 /**
  *
  * @author Estudiante
@@ -12,7 +14,7 @@ package Veterinary;
 public class Dog extends Pet {
     private String breed;
 
-    public Dog(String breed, String id, String name, String hairColor) {
+    public Dog(String id, String name, String hairColor,String breed) {
         super(id, name, hairColor);
         this.breed = breed;
     }
@@ -22,7 +24,18 @@ public class Dog extends Pet {
     public void sound() {
         System.out.println("Guau");
     }
-    
+    @Override
+    public void showInfo(){
+           super.showInfo();
+           System.out.println("Breed:"+this.breed);
+            System.out.println("-------------------------------------------------");
+    }
+    public void printInfo(PrintStream print){
+        print.print("Dog"+" ");
+        super.printInfo(print);
+        print.println(this.breed);
+    }
+
 
    
     
